@@ -15,7 +15,6 @@ namespace AdaCalculatorTeste
         }
 
         #region Teste Com Mock e Com valor
-
         [Theory]
         [InlineData("multiply", 100, 2, 200)]
         [InlineData("multiply", 100, -2, -200)]
