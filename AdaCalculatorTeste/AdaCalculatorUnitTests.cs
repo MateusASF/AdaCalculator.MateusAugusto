@@ -1,5 +1,4 @@
 using AdaCalculator;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
 using Moq;
 using Shouldly;
 
