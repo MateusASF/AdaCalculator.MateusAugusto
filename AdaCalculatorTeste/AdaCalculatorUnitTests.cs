@@ -23,15 +23,15 @@ namespace AdaCalculatorTeste
         [InlineData("multiply", 100, 0, 0)]
         public void CalcultatorMachine_MultiplicacaoDeNumeros_CalculoEChamadaCorreta(string op, double num1, double num2, double resultado)
         {
-            CalculatorMachine cf = new CalculatorMachine();
-            var lala = cf.Calculate(op, num1, num2);
+            CalculatorMachine calculatorMachine = new CalculatorMachine();
+            var calcCorreto = calculatorMachine.Calculate(op, num1, num2);
 
-            _sut.Calculate(op, num1, num2);
+            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((calcCorreto));
 
-            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((lala));
+            var calcMock = _sut.Calculate(op, num1, num2);
 
-            Assert.Equal(op, lala.operation);
-            Assert.Equal(resultado, lala.result);
+            Assert.Equal(calcMock.operation, calcCorreto.operation);
+            Assert.Equal(calcMock.result, calcCorreto.result);
 
             _mock.Verify(x => x.Calculate(op, num1, num2), Times.Once);
         }
@@ -43,15 +43,15 @@ namespace AdaCalculatorTeste
         [InlineData("sum", 100, 0, 100)]
         public void CalcultatorMachine_SomaDeNumeros_CalculoEChamadaCorreta(string op, double num1, double num2, double resultado)
         {
-            CalculatorMachine cf = new CalculatorMachine();
-            var lala = cf.Calculate(op, num1, num2);
+            CalculatorMachine calculatorMachine = new CalculatorMachine();
+            var calcCorreto = calculatorMachine.Calculate(op, num1, num2);
 
-            _sut.Calculate(op, num1, num2);
+            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((calcCorreto));
 
-            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((lala));
+            var calcMock = _sut.Calculate(op, num1, num2);
 
-            Assert.Equal(op, lala.operation);
-            Assert.Equal(resultado, lala.result);
+            Assert.Equal(calcMock.operation, calcCorreto.operation);
+            Assert.Equal(calcMock.result, calcCorreto.result);
 
             _mock.Verify(x => x.Calculate(op, num1, num2), Times.Once);
         }
@@ -62,15 +62,15 @@ namespace AdaCalculatorTeste
         [InlineData("subtract", 100, 0, 100)]
         public void CalcultatorMachine_SubtracaoDeNumeros_CalculoEChamadaCorreta(string op, double num1, double num2, double resultado)
         {
-            CalculatorMachine cf = new CalculatorMachine();
-            var lala = cf.Calculate(op, num1, num2);
+            CalculatorMachine calculatorMachine = new CalculatorMachine();
+            var calcCorreto = calculatorMachine.Calculate(op, num1, num2);
 
-            _sut.Calculate(op, num1, num2);
+            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((calcCorreto));
 
-            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((lala));
+            var calcMock = _sut.Calculate(op, num1, num2);
 
-            Assert.Equal(op, lala.operation);
-            Assert.Equal(resultado, lala.result);
+            Assert.Equal(calcMock.operation, calcCorreto.operation);
+            Assert.Equal(calcMock.result, calcCorreto.result);
 
             _mock.Verify(x => x.Calculate(op, num1, num2), Times.Once);
         }
@@ -81,15 +81,15 @@ namespace AdaCalculatorTeste
         [InlineData("divide", 100, 0, double.PositiveInfinity)]
         public void CalcultatorMachine_DivisaoDeNumeros_CalculoEChamadaCorreta(string op, double num1, double num2, double resultado)
         {
-            CalculatorMachine cf = new CalculatorMachine();
-            var lala = cf.Calculate(op, num1, num2);
+            CalculatorMachine calculatorMachine = new CalculatorMachine();
+            var calcCorreto = calculatorMachine.Calculate(op, num1, num2);
 
-            _sut.Calculate(op, num1, num2);
+            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((calcCorreto));
 
-            _mock.Setup(x => x.Calculate(op, num1, num2)).Returns((lala));
+            var calcMock = _sut.Calculate(op, num1, num2);
 
-            Assert.Equal(op, lala.operation);
-            Assert.Equal(resultado, lala.result);
+            Assert.Equal(calcMock.operation, calcCorreto.operation);
+            Assert.Equal(calcMock.result, calcCorreto.result);
 
             _mock.Verify(x => x.Calculate(op, num1, num2), Times.Once);
         }
